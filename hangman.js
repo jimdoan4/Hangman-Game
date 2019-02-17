@@ -5,35 +5,7 @@
 var words = ["SERENA WILLIAMS", "ORANGE", "TENNIS"];
 var livesRemaining = 10;
 var life = [];
-var underScores = [];
-var alphabets = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z"
-];
+var underScore = [];
 var randomWords;
 var randomLetters;
 
@@ -43,13 +15,17 @@ function start() {
   randomWords = words[Math.floor(Math.random() * words.length)];
   // console.log(randomWords);
   // Make underscores for each words
-  for (var i = 0; i < randomWords.length; i++) {
-    // console.log(i);
-    underScores.push("_"); }
-    // console.log(underScores);
-    document.querySelector('under').textContent = underScores;
+  for (var i = 0; i < randomWords.length; i++) 
+  {
+    underScore.push('_'); 
+  }
+    // console.log(underScore);
+    document.querySelector('#text-here').textContent = underScore.join(' ');
    }
-  
+  start();
 
 // Every time you call start a game its going to give you a random word
-start();
+// start();
+
+
+ 
