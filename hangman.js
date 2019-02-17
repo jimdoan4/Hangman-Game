@@ -6,13 +6,19 @@ let words = ["serena williams", "roder federer", "rafael nadal"];
 // Choose word randomly
 let randomWords = words[Math.floor(Math.random() * words.length)];
 let random = words[randomWords];
+let correctWords = [];
+let wrongWords = [];
 // Create underscores based on the length of the word
 let underScore = [];
 // Track users guesses
 document.addEventListener('keypress', (event) => {
   let keycode = event.keyCode;
   let keyButtons = String.fromCharCode(keycode);
-  console.log(keyButtons)
+  // console.log(keyButtons)
+  // If user chooses correct letter
+  if (keycode.indexOf(keycode) > -1) {
+    console.log(true);
+  }
 });
 
 // Check if user guess is right
