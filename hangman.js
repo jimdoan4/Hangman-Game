@@ -10,56 +10,70 @@
 // Create an alert if user gets all letters correct, an alert will advise "You Won!", if user is out of lives, an alert will advise "Sorry, try again!"
 
 var words = ["apple", "blueberry", "strawberry", "banana", "orange"];
-var alphabets = [
-"A",
-"B",
-"C",
-"D",
-"E",
-"F",
-"G",
-"H",
-"I",
-"J",
-"K",
-"L",
-"M",
-"N",
-"O",
-"P",
-"Q",
-"R",
-"S",
-"T",
-"U",
-"V",
-"W",
-"X",
-"Y",
-"Z"
-];
+// This will randomize the words
+var randomWords = words[Math.floor(Math.random() * words.length)];
+// Deciding if to use this and use click method. Make it look like buttons
+// var alphabets = [
+// "A",
+// "B",
+// "C",
+// "D",
+// "E",
+// "F",
+// "G",
+// "H",
+// "I",
+// "J",
+// "K",
+// "L",
+// "M",
+// "N",
+// "O",
+// "P",
+// "Q",
+// "R",
+// "S",
+// "T",
+// "U",
+// "V",
+// "W",
+// "X",
+// "Y",
+// "Z"
+// ];
 
-// Choose word randomly
-var correctWords = [];
-var wrongWords = [];
-// Check if user guess is right
+// Number of guesses left = 6;
 var livesRemaining = 6;
-var life = [];
-var guess;
-var inboxGuess;
-var letters;
-// Create underscores based on the length of the word
-var underScore = [];
+document.getElementById("livesRemaining").innerHTML = livesRemaining;
 
+// Count # of wins
+var countWins = 0;
+document.getElementById("countWins").innerHTML = countWins;
+
+var resetLetters = "";
+
+// empty array that will push blank letters to
+// This is the underscores on the page
+var blanks = [];
+
+// This array will push letters of words to compare with if user guess is right or not
+var blankWords = [];
+var i;
+
+// This will print out the blank spaces for the words accordingly to # of indexes
+for (i = 0; i < randomWords.length; i++) {
+        blanks.push("_");
+    }
+document.getElementById("wordGuesses").innerHTML = blanks.join(" ");
 
 // DOM Manipulations
-
-// var myLife = document.querySelector('#lives');
+// #livesRemaining, #countWins, #wordGuesses, #wordGuessed, #category, #man, #start, and #clear
 
 // Underscores for each length of words
 function underline() {
   randomWords = words[Math.floor(Math.random() * words.length)];
   for (var i = 0; i < randomWords.length; i++) {
+    if (randomWords[i] = )
     underScore.push('_'); }
     // console.log(underScore);
     document.querySelector('underscores').textContent = underScore.join(' ');
