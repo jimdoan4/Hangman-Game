@@ -45,15 +45,14 @@ var wrongWords = [];
 // Check if user guess is right
 var livesRemaining = 6;
 var life = [];
-var randomWords;
-var randomLetters;
+var guess;
+var inboxGuess;
+var letters;
 // Create underscores based on the length of the word
 var underScore = [];
 
-// $('.hello').click(function(){
-//   livesRemaining --;
-// })
 // DOM Manipulations
+var newButtons = document.querySelector('.buttons');
 
 // var myLife = document.querySelector('#lives');
 
@@ -73,17 +72,17 @@ function underline() {
 
   underline();
 
+// Create Alphabet buttons
   function alpha() {
-    var newButtons = document.querySelector('.buttons');
-    var lists = document.createElement('ul')
+    // var lists = document.createElement('ul')
     // buttons.className = "buttons";
     for (var i = 0; i < alphabets.length; i++) {
-      lists.id = 'alphabets';
-      btnListItems = document.createElement('button');
-      btnListItems.id = 'alphabets';
-      btnListItems.textContent = alphabets[i];
-      newButtons.appendChild(lists);
-      lists.appendChild(btnListItems);
+      // lists.id = 'alphabets';
+      var btnListItems = workingButton(alphabets.charAt(i).toUpperCase(), i);
+      // btnListItems.id = 'alphabets';
+      // btnListItems.textContent = alphabets[i];
+      newButtons.appendChild(btnListItems);
+      // lists.appendChild(btnListItems);
 
     // button.innerHTML = el;
     // var body = document.querySelector('.buttons');
@@ -93,9 +92,37 @@ function underline() {
 // alert('hi');
    }
 }
-alpha();
-//create alphabet ul/buttons
-//
+// alpha();
+
+// Creating Working Buttons
+function workingButton(text, id) {
+  var btnListItems = document.createElement('a');
+  btnListItems.setAttribute('href', '#');
+  btnListItems.textContent = text;
+  btnListItems.id = id;
+  btnListItems.classList.add('btn');
+  btnListItems.addEventListener('click', check, false);
+  return btnListItems;
+}
+// Disable buttons initially 
+// function disableAlpha() {
+//   document.querySelector('.buttons'),disabled = true;
+// }
+
+// disableAlpha();
+
+
+// function userGuesses() {
+// guess = 0;
+// for (i = 0; i < words.length; i++);
+//   if (words[i] === inboxGuesses) {
+//     guess = guess + 1;
+//     underScore[i] = letters;
+//   }
+// }
+
+// userGuesses();
+
 // function alphaButtons() {
 //   alphaNum = document.querySelector('.hello');
 //   alpha = document.createElement('ul');
@@ -119,7 +146,7 @@ alpha();
 //   alphabets.appendChild(num);
 // }
 
-//create Category Lists 
+// create Category Lists 
 // Show lives Remaining
 // Hangman
 // Start/Play button
@@ -127,9 +154,7 @@ alpha();
 
 
 
-// function livesLeft() {
-// life.push("You have " + life + " life"); 
-// }
+
 
 
 
