@@ -3,26 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="hangman.js"></script>
 	<title>Hang Game</title>
 </head>
 <body>
-	<h1 id="hangman">🄷🄰🄽🄶🄼🄰🄽 🄶🄰🄼🄴</h1>
-	<p>𝕋𝕙𝕖𝕣𝕖 𝕚𝕤 𝕟𝕠 𝕤𝕦𝕔𝕙 𝕥𝕙𝕚𝕟𝕘 𝕒𝕤 𝕒 𝕝𝕦𝕔𝕜𝕪 𝕘𝕦𝕖𝕤𝕤.</p>
-
-	<div class="container">
-		<div id="lives"></div>
-		<div class="rightGuess">Right Guesses</div>
-		<div class="wrongGuess">Wrong Guesses</div>
-		<h4 id="text-here"></h4>
-		<div class="bottom">
-			<div id="buttons"></div>
-			<!-- Will create the start and clear button in javascript -->
-			<!-- <button>START</button>
-			<button>CLEAR</button> -->
-		</div>
-	</div>
+	<header>
+		<h1 id="hangman">🄷🄰🄽🄶🄼🄰🄽 🄶🄰🄼🄴</h1>
+		<p>𝕋𝕙𝕖𝕣𝕖 𝕚𝕤 𝕟𝕠 𝕤𝕦𝕔𝕙 𝕥𝕙𝕚𝕟𝕘 𝕒𝕤 𝕒 𝕝𝕦𝕔𝕜𝕪 𝕘𝕦𝕖𝕤𝕤.</p>
+	</header>
+	<main>
+		<h4 id="lives"></h4>
+		<!-- <div class="rightGuess">Right Guesses</div>
+			<div class="wrongGuess">Wrong Guesses</div> -->
+			<h4 id="text-here"></h4>
+			<div class="bottom">
+				<div id="buttons"></div>
+				<!-- Will create the start and clear button in javascript -->
+				<button>START</button>
+				<button>CLEAR</button>
+			</div>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="hangman.js"></script>
 </body>
 
 </html>
