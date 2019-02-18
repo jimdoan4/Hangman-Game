@@ -73,16 +73,27 @@ function underline() {
 
   underline();
 
-  alphabets.forEach(function(el) {
-    var button = document.createElement('button')
-    button.className = "hello";
-    button.innerHTML = el;
-    var body = document.getElementById('buttons');
-    document.body.appendChild(button);
+  function alpha() {
+    var newButtons = document.querySelector('.buttons');
+    var lists = document.createElement('ul')
+    // buttons.className = "buttons";
+    for (var i = 0; i < alphabets.length; i++) {
+      lists.id = 'alphabets';
+      btnListItems = document.createElement('button');
+      btnListItems.id = 'alphabets';
+      btnListItems.textContent = alphabets[i];
+      newButtons.appendChild(lists);
+      lists.appendChild(btnListItems);
+
+    // button.innerHTML = el;
+    // var body = document.querySelector('.buttons');
+    // document.body.appendChild(button);
 //   document.getElementByTagName('main')[0].setAttribute("class", "hello");
 // button.addEventListener ("click", function() {
 // alert('hi');
-});
+   }
+}
+alpha();
 //create alphabet ul/buttons
 //
 // function alphaButtons() {
@@ -98,15 +109,15 @@ function underline() {
 //     alpha.appendChild(lines);
 //   }
 // }
-button.addEventListener('click', addItem);
-function alphaButtons(e) {
-  e.preventDefault();
-  var num = document.getElementByClassName('hello');
-  var divli = document.createElement('div');
-  divli.className = 'text.here';
-  divli.appendChild(document.createTextNode(num));
-  alphabets.appendChild(num);
-}
+// button.addEventListener('click', addItem);
+// function alphaButtons(e) {
+//   e.preventDefault();
+//   var num = document.getElementByClassName('hello');
+//   var divli = document.createElement('div');
+//   divli.className = 'text.here';
+//   divli.appendChild(document.createTextNode(alphabets));
+//   alphabets.appendChild(num);
+// }
 
 //create Category Lists 
 // Show lives Remaining
