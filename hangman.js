@@ -51,8 +51,8 @@ var letters;
 // Create underscores based on the length of the word
 var underScore = [];
 
+
 // DOM Manipulations
-var newButtons = document.querySelector('.buttons');
 
 // var myLife = document.querySelector('#lives');
 
@@ -73,37 +73,34 @@ function underline() {
   underline();
 
 // Create Alphabet buttons
-  function alpha() {
-    // var lists = document.createElement('ul')
+function alpha() {
+  var newButtons = document.querySelector('.buttons');
+  var under = document.querySelector('.text-here');
+  var lists = document.createElement('ul')
     // buttons.className = "buttons";
     for (var i = 0; i < alphabets.length; i++) {
-      // lists.id = 'alphabets';
-      var btnListItems = workingButton(alphabets.charAt(i).toUpperCase(), i);
-      // btnListItems.id = 'alphabets';
-      // btnListItems.textContent = alphabets[i];
-      newButtons.appendChild(btnListItems);
-      // lists.appendChild(btnListItems);
-
+      lists.id = 'alphabets';
+      var btnListItems = document.createElement('button');
+      btnListItems.id = 'alphabets';
+      btnListItems.textContent = alphabets[i];
+      newButtons.appendChild(lists);
+      lists.appendChild(btnListItems);
+      }
+    }  
     // button.innerHTML = el;
     // var body = document.querySelector('.buttons');
     // document.body.appendChild(button);
 //   document.getElementByTagName('main')[0].setAttribute("class", "hello");
 // button.addEventListener ("click", function() {
-// alert('hi');
-   }
-}
-// alpha();
+// alert('hi')
+alpha();
 
-// Creating Working Buttons
-function workingButton(text, id) {
-  var btnListItems = document.createElement('a');
-  btnListItems.setAttribute('href', '#');
-  btnListItems.textContent = text;
-  btnListItems.id = id;
-  btnListItems.classList.add('btn');
-  btnListItems.addEventListener('click', check, false);
-  return btnListItems;
-}
+  document.addEventListener("click", myFunction);
+   function myFunction() {
+        document.getElementById('alphabets').textContent = ('');
+      }
+ 
+
 // Disable buttons initially 
 // function disableAlpha() {
 //   document.querySelector('.buttons'),disabled = true;
