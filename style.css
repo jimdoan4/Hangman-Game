@@ -12,7 +12,10 @@ body {
 	flex-direction: row;
 	justify-content: center;
 }
-
+.hello {
+	width: 40px;
+	height: 35;
+}
 button {
 	background-color: black;
 	width: 100px;

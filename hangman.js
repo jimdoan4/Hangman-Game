@@ -50,6 +50,9 @@ var randomLetters;
 // Create underscores based on the length of the word
 var underScore = [];
 
+$('.hello').click(function(){
+livesRemaining --;
+})
 // DOM Manipulations
 
 // var myLife = document.querySelector('#lives');
@@ -68,7 +71,34 @@ function underline() {
     + livesRemaining + " remaining!";
   }
 
- underline();
+  underline();
+
+  alphabets.forEach(function(el) {
+    var button = document.createElement('button')
+    button.className = "hello";
+    button.innerHTML = el;
+    var body = document.getElementById('buttons');
+    document.body.appendChild(button);
+//   document.getElementByTagName('main')[0].setAttribute("class", "hello");
+// button.addEventListener ("click", function() {
+// alert('hi');
+});
+//create alphabet ul/buttons
+//
+function alphaButtons() {
+  alphaNum = document.querySelector('.hello');
+alpha = document.createElement('ul');
+
+}
+
+
+//create Category Lists 
+// Show lives Remaining
+// Hangman
+// Start/Play button
+// Reset button
+
+
 
 // function livesLeft() {
 // life.push("You have " + life + " life"); 
