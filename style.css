@@ -13,35 +13,34 @@ body {
 	justify-content: center;
 }*/
 
-.hello {
-	width: 30px;
-	height: 30px;
+.alpha-buttons {
+	width: 15px;
+	height: 15px;
+	list-style: none;
+	float: left;
 	background-color: black;
 	padding: 3px 3px;
 	border: solid 1px white;
 	color: white;
 	border-radius: 20%;
 	margin: 5px;
-	font-size: 17px;
+	font-size: 10px;
 	font-weight: bold;
-}
-/*button {
-	background-color: black;
-	width: 100px;
-	height: 40px;
-	padding: 5px 5px;
-	border: solid 1px white;
-	color: white;
-	border-radius: 20%;
-	margin: 40px;
-	font-size: 17px;
-	font-weight: bold;
-}*/
+    float: left;
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: center;
 
-button:hover {
-	background: red;
-}
 
-#lives {
+/* .alpha-buttons:hover {
+	background-color: red;
+} */
+
+/* #lives {
 	font-size: 23px;
-}
+} */
+
+/* .text-here {
+	background-color: red;
+	border-radius: 5%;
+  } */

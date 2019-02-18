@@ -3,9 +3,9 @@
 // Remember to Console.log() to check if each function/method works!
 // If right, push to the "right" array, otherwise, push to "wrong" array
 // Create an array of words
-// create start button when game does not start unless user clicks on the start button to initaite game
+// create start button when game does not start unless user clicks on the start button to initiate game
 // Create clear button to clear the score and reset the game back to 10 lives and 0 points
-// Create letter buttons so everytime a user click on a letter button the letter will appear on the underscore, If wrong letter, user loses point by -1
+// Create letter buttons so every time a user click on a letter button the letter will appear on the underscore, If wrong letter, user loses point by -1
 // Create hangman so if user clicks on correct letter, a body part will appear on the hangman
 // Create an alert if user gets all letters correct, an alert will advise "You Won!", if user is out of lives, an alert will advise "Sorry, try again!"
 
@@ -62,12 +62,12 @@ function underline() {
   for (var i = 0; i < randomWords.length; i++) {
     underScore.push('_'); }
     // console.log(underScore);
-    document.querySelector('.text-here').textContent = underScore.join(' ');
-    life = [];
-    livesRemaining = 6 ;
-    // life.push("You have " + life + " life"); 
-    document.querySelector('#lives').textContent = "You have " 
-    + livesRemaining + " remaining!";
+    document.querySelector('underscores').textContent = underScore.join(' ');
+    // life = [];
+    // livesRemaining = 6 ;
+    // // life.push("You have " + life + " life"); 
+    // document.querySelector('#lives').textContent = "You have " 
+    // + livesRemaining + " remaining!";
   }
 
   underline();
@@ -75,13 +75,12 @@ function underline() {
 // Create Alphabet buttons
 function alpha() {
   var newButtons = document.querySelector('.buttons');
-  var under = document.querySelector('.text-here');
-  var lists = document.createElement('ul')
+  var lists = document.createElement('ul');
     // buttons.className = "buttons";
     for (var i = 0; i < alphabets.length; i++) {
-      lists.id = 'alphabets';
-      var btnListItems = document.createElement('button');
-      btnListItems.id = 'alphabets';
+      lists.className = 'alph-buttons';
+      var btnListItems = document.createElement('li');
+      btnListItems.className = 'alpha-buttons';
       btnListItems.textContent = alphabets[i];
       newButtons.appendChild(lists);
       lists.appendChild(btnListItems);
