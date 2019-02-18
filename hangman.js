@@ -9,7 +9,7 @@
 // Create hangman so if user clicks on correct letter, a body part will appear on the hangman
 // Create an alert if user gets all letters correct, an alert will advise "You Won!", if user is out of lives, an alert will advise "Sorry, try again!"
 
-var words = ["serena williams", "roger federer", "rafael nadal"];
+var words = ["apple", "blueberry", "strawberry", "banana", "orange"];
 var alphabets = [
 "A",
 "B",
@@ -50,27 +50,30 @@ var randomLetters;
 // Create underscores based on the length of the word
 var underScore = [];
 
-// LivesRemaining = 10;
 // DOM Manipulations
 
+// var myLife = document.querySelector('#lives');
+
 // Underscores for each length of words
-function start() {
+function underline() {
   randomWords = words[Math.floor(Math.random() * words.length)];
-  // console.log(randomWords);
-  // Make underscores for each words
-  for (var i = 0; i < randomWords.length; i++) 
-  {
-    underScore.push('_'); 
-  }
+  for (var i = 0; i < randomWords.length; i++) {
+    underScore.push('_'); }
     // console.log(underScore);
     document.querySelector('#text-here').textContent = underScore.join(' ');
-
-    // life = [];
-    // livesRemaining = 6;
-    // document.querySelector('#lives').textContent = livesRemaining;
+    life = [];
+    livesRemaining = 6 ;
+    // life.push("You have " + life + " life"); 
+    document.querySelector('#lives').textContent = "You have " 
+    + livesRemaining + " remaining!";
   }
 
-  start();
+ underline();
+
+// function livesLeft() {
+// life.push("You have " + life + " life"); 
+// }
+
 
 
 
