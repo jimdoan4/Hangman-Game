@@ -50,9 +50,9 @@ var randomLetters;
 // Create underscores based on the length of the word
 var underScore = [];
 
-$('.hello').click(function(){
-livesRemaining --;
-})
+// $('.hello').click(function(){
+//   livesRemaining --;
+// })
 // DOM Manipulations
 
 // var myLife = document.querySelector('#lives');
@@ -63,7 +63,7 @@ function underline() {
   for (var i = 0; i < randomWords.length; i++) {
     underScore.push('_'); }
     // console.log(underScore);
-    document.querySelector('#text-here').textContent = underScore.join(' ');
+    document.querySelector('.text-here').textContent = underScore.join(' ');
     life = [];
     livesRemaining = 6 ;
     // life.push("You have " + life + " life"); 
@@ -85,12 +85,28 @@ function underline() {
 });
 //create alphabet ul/buttons
 //
-function alphaButtons() {
-  alphaNum = document.querySelector('.hello');
-alpha = document.createElement('ul');
-
+// function alphaButtons() {
+//   alphaNum = document.querySelector('.hello');
+//   alpha = document.createElement('ul');
+//   for (var i = 0; i < alphabets.length; i++) {
+//     alpha.id = 'alphabets';
+//     lines = document.createElement('li');
+//     lines.id = 'alpha';
+//     lines.textContent = alphabets[i];
+//     check();
+//     alphaNum.appendChild(alpha);
+//     alpha.appendChild(lines);
+//   }
+// }
+button.addEventListener('click', addItem);
+function alphaButtons(e) {
+  e.preventDefault();
+  var num = document.getElementByClassName('hello');
+  var divli = document.createElement('div');
+  divli.className = 'text.here';
+  divli.appendChild(document.createTextNode(num));
+  alphabets.appendChild(num);
 }
-
 
 //create Category Lists 
 // Show lives Remaining

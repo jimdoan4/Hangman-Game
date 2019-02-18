@@ -12,11 +12,20 @@ body {
 	flex-direction: row;
 	justify-content: center;
 }
+
 .hello {
-	width: 40px;
-	height: 35;
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	padding: 3px 3px;
+	border: solid 1px white;
+	color: white;
+	border-radius: 20%;
+	margin: 5px;
+	font-size: 17px;
+	font-weight: bold;
 }
-button {
+/*button {
 	background-color: black;
 	width: 100px;
 	height: 40px;
@@ -27,8 +36,13 @@ button {
 	margin: 40px;
 	font-size: 17px;
 	font-weight: bold;
-}
+}*/
 
 button:hover {
-	background: green;
+	background: red;
+}
+
+#lives {
+	font-size: 23px;
+	
 }
