@@ -12,7 +12,7 @@
 			<h1 id="hangman">🄷🄰🄽🄶🄼🄰🄽 🄶🄰🄼🄴</h1>
 			<p>𝕋𝕙𝕖𝕣𝕖 𝕚𝕤 𝕟𝕠 𝕤𝕦𝕔𝕙 𝕥𝕙𝕚𝕟𝕘 𝕒𝕤 𝕒 𝕝𝕦𝕔𝕜𝕪 𝕘𝕦𝕖𝕤𝕤.</p>
 		</header>
-		<main>
+		
 			<!-- # of lives remaining -->
 			<div id="livesRemaining"></div>
 
@@ -35,10 +35,12 @@
 			<div id="countWins"></div>
 
 			<!-- Start/Clear Buttons -->
+			<div class="container">
 			<button id="start" onclick="startGame()">Start</button>
 			<button id="clear" onclick="clearGame()">Reset</button>
 			</div>
-		</main>
+			
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="hangman.js"></script>
 	</body>
