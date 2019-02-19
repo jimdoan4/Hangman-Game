@@ -9,9 +9,9 @@
 // Create hangman so if user clicks on correct letter, a body part will appear on the hangman
 // Create an alert if user gets all letters correct, an alert will advise "You Won!", if user is out of lives, an alert will advise "Sorry, try again!"
 
-var words = ["apple", "blueberry", "strawberry", "banana", "orange"];
+var words = ["lexus", "honda", "acura", "prius", "toyota"];
 // This will randomize the words
-var randomWords;
+var randomWords = "";
 // Deciding if to use this and use click method. Make it look like buttons
 var alphabets = [
   "a",
@@ -44,30 +44,23 @@ var alphabets = [
 
 // Number of guesses left = 6;
 var livesRemaining = 6;
-// document.getElementById("livesRemaining").innerHTML = livesRemaining;
+// var livesRemaining = document.getElementById("livesRemaining");
 
 // Count # of wins
 var countWins = 0;
-// document.getElementById("countWins").innerHTML = countWins;
+document.getElementById("countWins").innerHTML = countWins;
 
-var resetLetters = "";
-
+// var resetLetters = "";
 // empty array that will push blank letters to
 // This is the underscores on the page
-var blanks = [];
+var correctGuesses = [];
 
 // This array will push letters of words to compare with if user guess is right or not
-var blankWords = [];
-var i;
-
-// This will print out the blank spaces for the words accordingly to # of indexes
-// for (i = 0; i < randomWords.length; i++) {
-//         blanks.push("_");
-//     }
-// document.getElementById("wordGuesses").innerHTML = blanks.join(" ");
+var wrongGuesses;
 
 // DOM Manipulations
 // #livesRemaining, #countWins, #wordGuesses, #wordGuessed, #category, #man, #start, and #clear
+
 
 // Create Alphabet buttons
 function alpha() {
@@ -109,45 +102,39 @@ function buttonClicked() {
       for (var i = 0; i < letterElement.length; i++) {
         for (var j = 0; j < letterElement.length; j++) {
           if (i == letterElement[j]) {
-            blanks[i] = chosenLetter;
+            correctGuesses[i] = chosenLetter;
           }
         }
       }
-      document.getElementById("wordGuesses").innerHTML = blanks.join(" ");
+      document.getElementById("correctGuesses").innerHTML = correctGuesses.join(" ");
     }
   }
 }
 
 // Create underscores for each words accordingly
-function underline() {
+function letterArr() {
   randomWords = words[Math.floor(Math.random() * words.length)];
-  blanks = [];
+  correctGuesses = [];
   for (var i = 0; i < randomWords.length; i++) {
-    blanks.push("_");
+    correctGuesses.push("_");
   }
-  // console.log(underScore);
-  document.getElementById("wordGuesses").innerHTML = blanks.join(" ");
+  document.getElementById("correctGuesses").innerHTML = correctGuesses.join(" ");
 }
-underline();
+letterArr();
 
 // Function to start the game
 function startGame() {
   randomWords = words[Math.floor(Math.random() * words.length)];
-  underline();
+  letterArr();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
 startGame();
 
-// Function to reset the game
+// // Function to reset the game
 function clearGame() {
   randomWords = words[Math.floor(Math.random() * words.length)];
-  underline();
+  letterArr();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
 clearGame();
 
-// // Categories
-// function categories() {
-// }
-    
-// , ["serena williams", "roger federer", "rafael nadal", "na li"], ["javascript", "css", "html", "python"]
