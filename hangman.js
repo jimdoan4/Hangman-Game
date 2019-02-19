@@ -14,32 +14,32 @@ var words = ["apple", "blueberry", "strawberry", "banana", "orange"];
 var randomWords = words[Math.floor(Math.random() * words.length)];
 // Deciding if to use this and use click method. Make it look like buttons
 var alphabets = [
-"A",
-"B",
-"C",
-"D",
-"E",
-"F",
-"G",
-"H",
-"I",
-"J",
-"K",
-"L",
-"M",
-"N",
-"O",
-"P",
-"Q",
-"R",
-"S",
-"T",
-"U",
-"V",
-"W",
-"X",
-"Y",
-"Z"
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z"
 ];
 
 // Number of guesses left = 6;
@@ -71,86 +71,69 @@ var i;
 
 // Create Alphabet buttons
 function alpha() {
-  var newButtons = document.getElementById('buttons');
-  var lists = document.createElement('ul');
-    for (var i = 0; i < alphabets.length; i++) {
-      lists.id = 'letterButtons';
-      var btnListItems = document.createElement('li');
-      btnListItems.id = 'letterButtons';
-      btnListItems.textContent = alphabets[i];
-      newButtons.appendChild(lists);
-      lists.appendChild(btnListItems);
-      }
-    } 
- alpha();
+  var newButtons = document.getElementById("buttons");
+  var lists = document.createElement("ul");
+  for (var i = 0; i < alphabets.length; i++) {
+    lists.id = "letterButtons";
+    var btnListItems = document.createElement("li");
+    btnListItems.id = "letterButtons";
+    btnListItems.textContent = alphabets[i];
+    newButtons.appendChild(lists);
+    lists.appendChild(btnListItems);
+  }
+}
+alpha();
 
- document.addEventListener("click", myFunction);
-   function myFunction() {
-     var clickedElement = event.target;
-     clickedElement.classList.add('buttonDisabled');
-     var chosenLetter = event.target.textContent;
-     console.log("var text " + chosenLetter);
-     var guessesRemaining = document.getElementById("livesRemaining").innerHTML;
-     if (guessesRemaining >0) {
-        guessesRemaining-=1;
-        document.getElementById("livesRemaining").innerHTML = guessesRemaining;
-     }  
+document.addEventListener("click", buttonClicked);
+function buttonClicked() {
+  var clickedElement = event.target;
+  clickedElement.classList.add("buttonDisabled");
+  var chosenLetter = event.target.textContent;
+  console.log("var text " + chosenLetter);
+  var guessesRemaining = document.getElementById("livesRemaining").innerHTML;
+  console.log(randomWords);
+  if (guessesRemaining > 0) {
+    var letterElement = new Array();
+    for (var i = 0; i < randomWords.length; i++) {
+      if (randomWords[i] == chosenLetter.toLowerCase()) {
+        console.log("found letter " + randomWords[i]);
+        letterElement.push(i);
       }
+    }
+    console.log("letter element length " + letterElement.length);
+    if (letterElement.length < 1) {
+      guessesRemaining -= 1;
+      document.getElementById("livesRemaining").innerHTML = guessesRemaining;
+    } else {
+      for (var i = 0; i < letterElement.length; i++) {
+        for (var j = 0; j < letterElement.length; j++) {
+          if (i == letterElement[j]) {
+            blanks[i] = chosenLetter;
+          }
+        }
+      }
+      document.getElementById("wordGuesses").textContent = blanks.join(" ");
+    }
+  }
+}
 
 // Underscores for each length of words
 function underline() {
   randomWords = words[Math.floor(Math.random() * words.length)];
   for (var i = 0; i < randomWords.length; i++) {
-    // if (randomWords[i] = )
-    blanks.push('_'); }
-    // console.log(underScore);
-    document.getElementById('wordGuesses').textContent = blanks.join(' ');
-    // life = [];
-    // livesRemaining = 6 ;
-    // // life.push("You have " + life + " life"); 
-    // document.querySelector('#lives').textContent = "You have " 
-    // + livesRemaining + " remaining!";
+    blanks.push("_");
   }
-  underline();
+  // console.log(underScore);
+  document.getElementById("wordGuesses").textContent = blanks.join(" ");
+}
+underline();
 
-
-
-
-// // Create Alphabet buttons
-// function alpha() {
-//   var newButtons = document.querySelector('.buttons');
-//   var lists = document.createElement('ul');
-//     // buttons.className = "buttons";
-//     for (var i = 0; i < alphabets.length; i++) {
-//       lists.className = 'alph-buttons';
-//       var btnListItems = document.createElement('li');
-//       btnListItems.className = 'alpha-buttons';
-//       btnListItems.textContent = alphabets[i];
-//       newButtons.appendChild(lists);
-//       lists.appendChild(btnListItems);
-//       }
-//     }  
-    // button.innerHTML = el;
-    // var body = document.querySelector('.buttons');
-    // document.body.appendChild(button);
-//   document.getElementByTagName('main')[0].setAttribute("class", "hello");
-// button.addEventListener ("click", function() {
-// alert('hi')
-// alpha();
-
-//   document.addEventListener("click", myFunction);
-//    function myFunction() {
-//         document.getElementById('alphabets').textContent = ('');
-//       }
- 
-
-// Disable buttons initially 
+// Disable buttons initially
 // function disableAlpha() {
 //   document.querySelector('.buttons'),disabled = true;
 // }
 
 // disableAlpha();
-
 
 // function userGuesses() {
 // guess = 0;
@@ -186,29 +169,6 @@ function underline() {
 //   alphabets.appendChild(num);
 // }
 
-// create Category Lists 
-// Show lives Remaining
-// Hangman
-// Start/Play button
-// Reset button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //   alphabets.forEach(function(el) {
 //     var button = document.createElement('button')
 // //   button.className = "hello";
@@ -223,8 +183,6 @@ function underline() {
 // alert('hi');
 // });
 
-
-
 // // Track users guesses
 // document.addEventListener('keypress', (event) => {
 //   let keys = event.keyCode;
@@ -234,7 +192,7 @@ function underline() {
 //   if (words.indexOf(keys) > -1) {
 //     // console.log(true);
 //     correctWords.push(keys);
-//     // replace underscore with the right letter 
+//     // replace underscore with the right letter
 //     underScore[words.indexOf(keys)] = keys;
 //     underLines[0].textContent = underScore.join(' ');
 //     // Checks to see if user word matches guesses
@@ -245,16 +203,3 @@ function underline() {
 //     wrongWords.push(keys);
 //   }
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
