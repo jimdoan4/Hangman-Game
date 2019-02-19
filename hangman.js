@@ -11,7 +11,7 @@
 
 var words = ["apple", "blueberry", "strawberry", "banana", "orange"];
 // This will randomize the words
-var randomWords = words[Math.floor(Math.random() * words.length)];
+var randomWords = "";
 // Deciding if to use this and use click method. Make it look like buttons
 var alphabets = [
   "A",
@@ -44,7 +44,7 @@ var alphabets = [
 
 // Number of guesses left = 6;
 var livesRemaining = 6;
-document.getElementById("livesRemaining").innerHTML = livesRemaining;
+// document.getElementById("livesRemaining").innerHTML = livesRemaining;
 
 // Count # of wins
 var countWins = 0;
@@ -120,6 +120,7 @@ function buttonClicked() {
 // Underscores for each length of words
 function underline() {
   randomWords = words[Math.floor(Math.random() * words.length)];
+  blanks = [];
   for (var i = 0; i < randomWords.length; i++) {
     blanks.push("_");
   }
@@ -127,6 +128,29 @@ function underline() {
   document.getElementById("wordGuesses").textContent = blanks.join(" ");
 }
 underline();
+
+function startGame() {
+  randomWords = words[Math.floor(Math.random() * words.length)];
+  underline();
+}
+
+function clearGame() {
+  randomWords = words[Math.floor(Math.random() * words.length)];
+  underline();
+  document.getElementById("livesRemaining").innerHTML = 6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Disable buttons initially
 // function disableAlpha() {
