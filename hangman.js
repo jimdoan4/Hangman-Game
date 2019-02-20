@@ -64,14 +64,14 @@ var choice;
 var guessesMade = [];
 
 // Number of guesses left = 6;
-var livesRemaining = 6;
+var livesRemaining = 7;
 // var livesRemaining = document.getElementById("livesRemaining");
 
 // Count # of wins and losses
 var sumWins = 0;
 var isInitialized = false;
 // document.getElementById("sumWins");
-var sumLosses = 0;
+
 // document.getElementById("sumWins").innerHTML = sumWins;
 
 // Underscores for each letter in the array
@@ -85,6 +85,7 @@ function buttonsAlpha() {
   var lists = document.createElement("ul");
   for (var i = 0; i < alphabets.length; i++) {
     var btnListItems = document.createElement("li");
+    btnListItems.classList.add('container-fluid');
     btnListItems.textContent = alphabets[i];
     newButtons.appendChild(lists);
     lists.appendChild(btnListItems);
@@ -132,14 +133,16 @@ function buttonClicked() {
       document.getElementById("underscores").innerHTML = underscores.join(" ");
       if (!underscores.join().includes("_")) {
         sumWins++;
+        alert("Congrats, you won!");
         document.getElementById("sumWins").innerHTML = sumWins;
       }
     }
   }
 }
- function drawParts() {
-   
- }
+function drawParts() {
+  var drawMan = livesRemaining;
+  drawArray[drawMan]();
+}
 
 // Function to start the game
 function startGame() {
@@ -152,12 +155,9 @@ function startGame() {
   }
 }
 
-
 // // Function to reset the game
 function clearGame() {
   randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
   randomArrays();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
-
-
