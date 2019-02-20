@@ -1,8 +1,8 @@
 ## Hangman-Game
-General Assembly WDI December 20 - Project 1
+General Assembly WDI 20 - Project 1
 
-Trello Board: https://trello.com/b/IwGhvwrh/hangman-project-1
-GitHub: https://github.com/jimdoan4/Hangman-Game.github.io
+- Trello Board: https://trello.com/b/IwGhvwrh/hangman-project-1
+- GitHub: https://github.com/jimdoan4/Hangman-Game.github.io
 
 ## Overview
 Simple Hangman game focusing on brands of automobiles. Created using HTML, CSS, Bootstrap, Javascript.
