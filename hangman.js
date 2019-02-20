@@ -139,10 +139,6 @@ function buttonClicked() {
     }
   }
 }
-function drawParts() {
-  var drawMan = livesRemaining;
-  drawArray[drawMan]();
-}
 
 // Function to start the game
 function startGame() {
@@ -152,6 +148,7 @@ function startGame() {
   if (!isInitialized) {
     document.getElementById("sumWins").innerHTML = 0;
     isInitialized = true;
+    canvas();
   }
 }
 

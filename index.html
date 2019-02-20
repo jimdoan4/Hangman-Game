@@ -1,11 +1,10 @@
 <!doctype html>
 <html>
-
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
-      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<title>Hang Game</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.cs">
+          <title>Hang Game</title> 
 	</head>
 
 	<body>
@@ -13,7 +12,9 @@
 			<h1 id="hangman">🄷🄰🄽🄶🄼🄰🄽 🄶🄰🄼🄴</h1>
 			<p>𝕋𝕙𝕖𝕣𝕖 𝕚𝕤 𝕟𝕠 𝕤𝕦𝕔𝕙 𝕥𝕙𝕚𝕟𝕘 𝕒𝕤 𝕒 𝕝𝕦𝕔𝕜𝕪 𝕘𝕦𝕖𝕤𝕤.</p>
 		</header>
+      
 		<div class="container">
+          <p id="one">𝕋𝕣𝕚𝕖𝕤 𝕃𝕖𝕗𝕥: </p>
 			<!-- # of lives remaining -->
 			<div id="livesRemaining" class="col"></div>
 
@@ -26,24 +27,26 @@
 
             <!-- # of wins per player -->
 			<div id="sumWins" class="col"></div>
-      
+          <p id="two">𝕎𝕚𝕟 ℂ𝕠𝕦𝕟𝕥𝕤: </p>
 			
 
 			
        <!-- This is the onclick buttons -->
 			<div id="buttons" class="col"></div>
 			<!-- Start/Clear Buttons -->
-			
-    
-			<button id="start"  onclick="startGame()">Start</button>
-			<button id="clear"  onclick="clearGame()">Reset</button>
-			
+		
       </div>
+      <div class="container">
+        
+			<button id="start"  onclick="startGame()">Start</button>
+			<button id="start"  onclick="clearGame()">Reset</button>
+      </div>
+     
       
       <!-- canvas for Hangman -->
 			<canvas id="man"></canvas>
 			
-      </div>
+     
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="hangman.js"></script>
 	</body>
