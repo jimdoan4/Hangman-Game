@@ -1,59 +1,86 @@
 body {
-	background-image: url(https://i.stack.imgur.com/W6Fuk.png);
+	background: linear-gradient( rgba(15, 15, 15, 0.3), rgba(34, 33, 33, 0.3)), url(https://farm5.static.flickr.com/4188/34547719245_a4925b1d27_b.jpg);
 	background-size: cover;
+   /*  opacity: .5; */
 	text-align: center;
 	font-size: 30px;
 	color: white;
 	padding: 30px;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 #hangman {
-  font-size: 80px;
+	font-size: 145px;
+  font-weight: bold;
 }
+
 #underscores {
-	font-size: 57px;
-	 
+	font-size: 70px;
+font-weight: bold;
 }
 
 p {
-  font-size: 35px;
+	font-size: 50px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+letter-spacing: -1.4px;
+word-spacing: -1px;
+color: #FFFAF8;
+font-weight: 400;
+text-decoration: none;
+font-style: italic;
+font-variant: normal;
+text-transform: none;
 }
+
 #one {
-	font-size: 25px;
+	font-size: 40px;
+  font-weight: bold;
 }
+
 #two {
-  margin-top: 40px;
-  font-size: 25px;
+	margin-top: 40px;
+	font-size: 40px;
+  font-weight: bold;
+}
+
+#livesRemaining {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#sumWins {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .col {
-  margin-top: 70px;
+	margin-top: 70px;
 }
 
 .container-fluid {
-	width: 36px;
-	height: 28px;
+	width: 65px;
+	height: 50px;
 	background-color: white;
 	padding: 3px;
 	border: solid 1px white;
 	color: black;
 	border-radius: 8%;
-	margin: 8px; 
-	font-size: 21px;
+	margin: 8px;
+	font-size: 35px;
 	font-weight: bold;
 	list-style: none;
-    border: 1px black;
+	border: 1px black;
 	float: left;
 	/* display: flex;
 	flex-direction: row;  */
 	text-align: center;
-  text-shadow: 
-		0px 2px hsl(220, 80%, 30%), 
+	text-shadow:
+		0px 2px hsl(220, 80%, 30%),
 		0px 3px px #2C70B4;
-	box-shadow: 
+	box-shadow:
 		0px 0px 0px 2px hsl(230, 80%, 50%),
 		0px 0px 0px 2px hsl(330, 80%, 40%),
 		0px 3px 3px 3px #2C70B4;
@@ -74,9 +101,13 @@ li:hover p {
 @keyframes morph {
 	0% {
 		border-radius: 100px 30px 100px 30px;
-	} 50% {
+	}
+
+	50% {
 		border-radius: 30px 100px 30px 100px;
-	} 100% {
+	}
+
+	100% {
 		border-radius: 100px 30px 100px 30px;
 	}
 }
@@ -84,9 +115,13 @@ li:hover p {
 @keyframes rot {
 	0% {
 		transform: rotate(-3deg);
-	} 50% {
+	}
+
+	50% {
 		transform: rotate(3deg);
-	} 100% {
+	}
+
+	100% {
 		transform: rotate(-3deg);
 	}
 
@@ -95,18 +130,16 @@ li:hover p {
 #start {
 	text-align: center;
 	font-weight: bold;
-	width: 105px;
-	height: 45px;
+	width: 195px;
+	height: 105px;
 	margin: 80px auto;
 	font-size: 20px;
-    margin-top: 90px;
-
+	margin-top: 90px;
 	border-radius: 30px;
-	 
-	text-shadow: 
-		0px 2px hsl(220, 80%, 30%), 
+	text-shadow:
+		0px 2px hsl(220, 80%, 30%),
 		0px 3px px #2C70B4;
-	box-shadow: 
+	box-shadow:
 		0px 0px 0px 2px hsl(230, 80%, 50%),
 		0px 0px 0px 2px hsl(330, 80%, 40%),
 		0px 3px 3px 6px #2C70B4;
@@ -118,17 +151,17 @@ li:hover p {
 #clear {
 	text-align: center;
 	font-weight: bold;
-	width: 105px;
-	height: 45px;
+	width: 195px;
+	height: 105px;
 	margin: 80px auto;
 	font-size: 20px;
-    margin-top: 90px;
-margin-left: 170px;
+	margin-top: 160px;
+	margin-left: 170px;
 	border-radius: 30px;
-	text-shadow: 
-		0px 2px hsl(220, 80%, 30%), 
+	text-shadow:
+		0px 2px hsl(220, 80%, 30%),
 		0px 3px px #2C70B4;
-	box-shadow: 
+	box-shadow:
 		0px 0px 0px 2px hsl(230, 80%, 50%),
 		0px 0px 0px 2px hsl(330, 80%, 40%),
 		0px 3px 3px 6px #2C70B4;
@@ -141,6 +174,7 @@ button p {
 	margin-top: 20px;
 	transform: rotate(-3deg);
 }
+
 button:hover {
 	animation: .8s morph ease infinite;
 }
@@ -152,9 +186,13 @@ button:hover p {
 @keyframes morph {
 	0% {
 		border-radius: 100px 30px 100px 30px;
-	} 50% {
+	}
+
+	50% {
 		border-radius: 30px 100px 30px 100px;
-	} 100% {
+	}
+
+	100% {
 		border-radius: 100px 30px 100px 30px;
 	}
 }
@@ -162,16 +200,20 @@ button:hover p {
 @keyframes rot {
 	0% {
 		transform: rotate(-3deg);
-	} 50% {
+	}
+
+	50% {
 		transform: rotate(3deg);
-	} 100% {
+	}
+
+	100% {
 		transform: rotate(-3deg);
 	}
 
 }
 
 button:hover {
-  background-color: red;
+	background-color: red;
 }
 
 .buttonDisabled {
