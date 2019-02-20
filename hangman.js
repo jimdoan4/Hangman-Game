@@ -9,9 +9,25 @@
 // Create hangman so if user clicks on correct letter, a body part will appear on the hangman
 // Create an alert if user gets all letters correct, an alert will advise "You Won!", if user is out of lives, an alert will advise "Sorry, try again!"
 
-var words = ["lexus", "honda", "acura", "prius", "toyota"];
+// Array of words
+var wordArrays = [
+  "lexus",
+  "honda",
+  "acura",
+  "chevrolet",
+  "toyota",
+  "tesla",
+  "mazda",
+  "nissan",
+  "ford"
+];
+
+// Word that you selected
+var words;
+
 // This will randomize the words
 var randomWords = "";
+
 // Deciding if to use this and use click method. Make it look like buttons
 var alphabets = [
   "a",
@@ -42,40 +58,51 @@ var alphabets = [
   "z"
 ];
 
+// right and wrong guesses and guesses made
+var correctGuesses;
+var choice;
+var guessesMade = [];
+
 // Number of guesses left = 6;
 var livesRemaining = 6;
 // var livesRemaining = document.getElementById("livesRemaining");
 
-// Count # of wins
-var countWins = 0;
-document.getElementById("countWins").innerHTML = countWins;
+// Count # of wins and losses
+var sumWins = 0;
+var sumLosses = 0;
+// document.getElementById("sumWins").innerHTML = sumWins;
 
-// var resetLetters = "";
-// empty array that will push blank letters to
-// This is the underscores on the page
-var correctGuesses = [];
+// Underscores for each letter in the array
+var underscores = [];
 
-// This array will push letters of words to compare with if user guess is right or not
-var wrongGuesses;
+// Hangman body parts
 
 // DOM Manipulations
 // #livesRemaining, #countWins, #wordGuesses, #wordGuessed, #category, #man, #start, and #clear
 
-
 // Create Alphabet buttons
-function alpha() {
+function buttonsAlpha() {
   var newButtons = document.getElementById("buttons");
   var lists = document.createElement("ul");
   for (var i = 0; i < alphabets.length; i++) {
-    lists.id = "letterButtons";
     var btnListItems = document.createElement("li");
-    btnListItems.id = "letterButtons";
     btnListItems.textContent = alphabets[i];
     newButtons.appendChild(lists);
     lists.appendChild(btnListItems);
   }
 }
-alpha();
+buttonsAlpha();
+
+// Create underscore based on # of characters
+function randomArrays() {
+  randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
+  underscores = [];
+  for (var i = 0; i < randomWords.length; i++) {
+    underscores.push("_");
+  }
+  document.getElementById("underscores").innerHTML = underscores.join(" ");
+}
+randomArrays();
 
 // Add onclick function for buttons
 document.addEventListener("click", buttonClicked);
@@ -89,8 +116,8 @@ function buttonClicked() {
   if (guessesRemaining > 0) {
     var letterElement = new Array();
     for (var i = 0; i < randomWords.length; i++) {
-      if (randomWords[i] === chosenLetter.toLowerCase()) {
-        console.log("found letter " + randomWords[i]);
+      if (randomWords.charAt(i) === chosenLetter.toLowerCase()) {
+        console.log("found letter " + i);
         letterElement.push(i);
       }
     }
@@ -100,41 +127,48 @@ function buttonClicked() {
       document.getElementById("livesRemaining").innerHTML = guessesRemaining;
     } else {
       for (var i = 0; i < letterElement.length; i++) {
-        for (var j = 0; j < letterElement.length; j++) {
-          if (i == letterElement[j]) {
-            correctGuesses[i] = chosenLetter;
-          }
-        }
+        underscores[letterElement[i]] = chosenLetter;
       }
-      document.getElementById("correctGuesses").innerHTML = correctGuesses.join(" ");
+      document.getElementById("underscores").innerHTML = underscores.join(" ");
     }
   }
 }
 
-// Create underscores for each words accordingly
-function letterArr() {
-  randomWords = words[Math.floor(Math.random() * words.length)];
-  correctGuesses = [];
-  for (var i = 0; i < randomWords.length; i++) {
-    correctGuesses.push("_");
-  }
-  document.getElementById("correctGuesses").innerHTML = correctGuesses.join(" ");
-}
-letterArr();
-
 // Function to start the game
 function startGame() {
-  randomWords = words[Math.floor(Math.random() * words.length)];
-  letterArr();
+  randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
+  randomArrays();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
 startGame();
 
 // // Function to reset the game
 function clearGame() {
-  randomWords = words[Math.floor(Math.random() * words.length)];
-  letterArr();
+  randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
+  randomArrays();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
 clearGame();
+
+// // Create underscores for each words accordingly
+// function randomArray() {
+//   underscores = [];
+//   symbol = ["_"];
+//   randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
+//   wordsInUnderscore = document.getElementById("underscores");
+//   rightLetter = document.createElement("ul");
+//   for (var i = 0; i < randomWords.length; i++) {
+//     choice = document.createElement("li");
+//     if (randomWords[i] === symbol) {
+//       underscores.push.join("_");
+//     } else {
+//       underscores.push("_");
+//     }
+//     guessesMade.push(choice);
+//     wordsInUnderscore.appendChild(rightLetter);
+//     rightLetter.appendChild(choice);
+//     document.getElementById("underscores").innerHTML = underscores.join(" ");
+//   }
+// }
+// randomArray();
 
