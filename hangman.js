@@ -69,6 +69,8 @@ var livesRemaining = 6;
 
 // Count # of wins and losses
 var sumWins = 0;
+var isInitialized = false;
+// document.getElementById("sumWins");
 var sumLosses = 0;
 // document.getElementById("sumWins").innerHTML = sumWins;
 
@@ -130,6 +132,10 @@ function buttonClicked() {
         underscores[letterElement[i]] = chosenLetter;
       }
       document.getElementById("underscores").innerHTML = underscores.join(" ");
+      if (!underscores.join().includes("_")) {
+        sumWins++;
+        document.getElementById("sumWins").innerHTML = sumWins;
+      }
     }
   }
 }
@@ -139,8 +145,12 @@ function startGame() {
   randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
   randomArrays();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
+  if (!isInitialized) {
+    document.getElementById("sumWins").innerHTML = 0;
+    isInitialized = true;
+  }
 }
-startGame();
+
 
 // // Function to reset the game
 function clearGame() {
@@ -148,7 +158,7 @@ function clearGame() {
   randomArrays();
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
-clearGame();
+
 
 // // Create underscores for each words accordingly
 // function randomArray() {
