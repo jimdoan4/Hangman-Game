@@ -15,11 +15,14 @@ body {
 }
 
 p {
-  font-size: 30px;
+  font-size: 26px;
 }
-
+#one {
+	font-size: 24px;
+}
 #two {
   margin-top: 40px;
+  font-size: 24px;
 }
 
 .col {
@@ -27,8 +30,8 @@ p {
 }
 
 .container-fluid {
-	width: 40px;
-	height: 38px;
+	width: 34px;
+	height: 29px;
 	background-color: white;
 	padding: 3px;
 	border: solid 1px white;
