@@ -13,16 +13,20 @@ body {
 #hangman {
   font-size: 80px;
 }
+#underscores {
+	font-size: 57px;
+	 
+}
 
 p {
-  font-size: 26px;
+  font-size: 35px;
 }
 #one {
-	font-size: 24px;
+	font-size: 25px;
 }
 #two {
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 25px;
 }
 
 .col {
@@ -30,14 +34,14 @@ p {
 }
 
 .container-fluid {
-	width: 34px;
-	height: 29px;
+	width: 36px;
+	height: 28px;
 	background-color: white;
 	padding: 3px;
 	border: solid 1px white;
 	color: black;
 	border-radius: 8%;
-	margin: 4px; 
+	margin: 8px; 
 	font-size: 21px;
 	font-weight: bold;
 	list-style: none;
@@ -46,20 +50,124 @@ p {
 	/* display: flex;
 	flex-direction: row;  */
 	text-align: center;
+  text-shadow: 
+		0px 2px hsl(220, 80%, 30%), 
+		0px 3px px #2C70B4;
+	box-shadow: 
+		0px 0px 0px 2px hsl(230, 80%, 50%),
+		0px 0px 0px 2px hsl(330, 80%, 40%),
+		0px 3px 3px 3px #2C70B4;
 }
 
 li:hover {
 	background-color: red;
 }
 
-button {
+li:hover {
+	animation: .8s morph ease infinite;
+}
+
+li:hover p {
+	animation: .8s rot ease infinite;
+}
+
+@keyframes morph {
+	0% {
+		border-radius: 100px 30px 100px 30px;
+	} 50% {
+		border-radius: 30px 100px 30px 100px;
+	} 100% {
+		border-radius: 100px 30px 100px 30px;
+	}
+}
+
+@keyframes rot {
+	0% {
+		transform: rotate(-3deg);
+	} 50% {
+		transform: rotate(3deg);
+	} 100% {
+		transform: rotate(-3deg);
+	}
+
+}
+
+#start {
 	text-align: center;
 	font-weight: bold;
-	width: 95px;
-	height: 40px;
+	width: 105px;
+	height: 45px;
 	margin: 80px auto;
 	font-size: 20px;
     margin-top: 90px;
+
+	border-radius: 30px;
+	 
+	text-shadow: 
+		0px 2px hsl(220, 80%, 30%), 
+		0px 3px px #2C70B4;
+	box-shadow: 
+		0px 0px 0px 2px hsl(230, 80%, 50%),
+		0px 0px 0px 2px hsl(330, 80%, 40%),
+		0px 3px 3px 6px #2C70B4;
+	cursor: pointer;
+	border-radius: 100px 30px 40px 30px;
+
+}
+
+#clear {
+	text-align: center;
+	font-weight: bold;
+	width: 105px;
+	height: 45px;
+	margin: 80px auto;
+	font-size: 20px;
+    margin-top: 90px;
+margin-left: 170px;
+	border-radius: 30px;
+	text-shadow: 
+		0px 2px hsl(220, 80%, 30%), 
+		0px 3px px #2C70B4;
+	box-shadow: 
+		0px 0px 0px 2px hsl(230, 80%, 50%),
+		0px 0px 0px 2px hsl(330, 80%, 40%),
+		0px 3px 3px 6px #2C70B4;
+	cursor: pointer;
+	border-radius: 100px 30px 40px 30px;
+
+}
+
+button p {
+	margin-top: 20px;
+	transform: rotate(-3deg);
+}
+button:hover {
+	animation: .8s morph ease infinite;
+}
+
+button:hover p {
+	animation: .8s rot ease infinite;
+}
+
+@keyframes morph {
+	0% {
+		border-radius: 100px 30px 100px 30px;
+	} 50% {
+		border-radius: 30px 100px 30px 100px;
+	} 100% {
+		border-radius: 100px 30px 100px 30px;
+	}
+}
+
+@keyframes rot {
+	0% {
+		transform: rotate(-3deg);
+	} 50% {
+		transform: rotate(3deg);
+	} 100% {
+		transform: rotate(-3deg);
+	}
+
 }
 
 button:hover {
@@ -67,5 +175,5 @@ button:hover {
 }
 
 .buttonDisabled {
-	color: black;
+	color: red;
 }
