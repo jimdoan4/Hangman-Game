@@ -79,9 +79,6 @@ var underscores = [];
 
 // Hangman body parts
 
-// DOM Manipulations
-// #livesRemaining, #countWins, #wordGuesses, #wordGuessed, #category, #man, #start, and #clear
-
 // Create Alphabet buttons
 function buttonsAlpha() {
   var newButtons = document.getElementById("buttons");
@@ -127,6 +124,7 @@ function buttonClicked() {
     if (letterElement.length < 1) {
       guessesRemaining -= 1;
       document.getElementById("livesRemaining").innerHTML = guessesRemaining;
+      drawParts();
     } else {
       for (var i = 0; i < letterElement.length; i++) {
         underscores[letterElement[i]] = chosenLetter;
@@ -139,6 +137,9 @@ function buttonClicked() {
     }
   }
 }
+ function drawParts() {
+   
+ }
 
 // Function to start the game
 function startGame() {
@@ -159,26 +160,4 @@ function clearGame() {
   document.getElementById("livesRemaining").innerHTML = livesRemaining;
 }
 
-
-// // Create underscores for each words accordingly
-// function randomArray() {
-//   underscores = [];
-//   symbol = ["_"];
-//   randomWords = wordArrays[Math.floor(Math.random() * wordArrays.length)];
-//   wordsInUnderscore = document.getElementById("underscores");
-//   rightLetter = document.createElement("ul");
-//   for (var i = 0; i < randomWords.length; i++) {
-//     choice = document.createElement("li");
-//     if (randomWords[i] === symbol) {
-//       underscores.push.join("_");
-//     } else {
-//       underscores.push("_");
-//     }
-//     guessesMade.push(choice);
-//     wordsInUnderscore.appendChild(rightLetter);
-//     rightLetter.appendChild(choice);
-//     document.getElementById("underscores").innerHTML = underscores.join(" ");
-//   }
-// }
-// randomArray();
 
