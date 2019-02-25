@@ -1,6 +1,7 @@
 ## Hangman-Game
 General Assembly WDI 20 - Project 1
 
+- Deployed Site: https://jimdoan4.github.io/Hangman-Game/.
 - Trello Board: https://trello.com/b/IwGhvwrh/hangman-project-1
 - GitHub: https://github.com/jimdoan4/Hangman-Game.github.io
 
